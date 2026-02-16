@@ -61,7 +61,7 @@ distances = [0]
 for i in range(1, len(res)):
     distances.append(distances[-1] + haversine(res[i-1], res[i]))
 
-# --- 3. ОБЧИСЛЕННЯ ХАРАКТЕРИСТИК (З твоїх скріншотів) ---
+# --- 3. ОБЧИСЛЕННЯ ХАРАКТЕРИСТИК) ---
 spline = CubicSpline(distances, elevations)
 xx = np.linspace(distances[0], distances[-1], 500)
 yy = [spline.evaluate(x) for x in xx]
